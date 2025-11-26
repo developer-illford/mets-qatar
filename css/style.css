@@ -11,6 +11,18 @@ Table of CSS
 9.content - contact section 
 10.Footer -------------------------------------------------*/
 /*-------------------------------------------------*/
+/* Rise effect initial state */
+.rise {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+/* When element becomes visible */
+.rise-show {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 
 /* = Header/*-------------------------------------------------*/
