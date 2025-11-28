@@ -11,21 +11,34 @@ Table of CSS
 9.content - contact section 
 10.Footer -------------------------------------------------*/
 /*-------------------------------------------------*/
+/* 🔥 Hide Google Translate Top Banner */
+.goog-te-banner-frame,
+.goog-te-menu-frame,
+.goog-te-gadget-icon {
+    display: none !important;
+}
+
+/* Removes the blank space Google adds on top */
+body {
+    top: 0px !important;
+}
+
 
 /* Rise effect initial state */
 
 
-.rise {
+/* .rise {
     opacity: 0;
     transform: translateY(25px);
     transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-}
+} */
 
 /* When element becomes visible */
-.rise-show {
+/* .rise-show {
     opacity: 1;
     transform: translateY(0);
-}
+} */
+
 
 /* = Header/*-------------------------------------------------*/
 header {
@@ -61,7 +74,7 @@ header {
 }
 
 .navbar-brand img {
-    width: 400px;
+    width: 650px;
     max-width: 100% !important;
 }
 
@@ -142,6 +155,8 @@ header {
 .navbar-default .navbar-toggle:focus {
     background: #fff;
 }
+
+
 
 /*-------------------------------------------------*/
 /* = General /*-------------------------------------------------*/
@@ -2689,15 +2704,56 @@ html {
 }
 
 .logo-container {
-    width: max-content;
-    height: 106px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    /* required */
 }
 
 
+.buttons-wrapper-container {
+    margin-left: auto !important;
+    /* THIS ALWAYS WORKS */
+}
 
+.buttons-wrapper {
+    position: absolute;
+    left: 200%;
+    /* move fully to right */
+    top: 0;
+    /* optional: center vertically */
+    transform: translateY(10%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.arabic-btn {
+    display: block;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    border: none;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+}
+
+.checkresult-btn {
+    display: block;
+    padding: 14px 30px;
+    margin: 5px;
+    background-color: #0d8539;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    text-align: center;
+    white-space: nowrap;
+    /* keep text in one line */
+}
+
+.checkresult-btn-container {
+    margin-right: 50px;
+    /* only affects Check Results */
+}
 
 
 
@@ -2894,7 +2950,7 @@ figcaption {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 1000 ;
+    z-index: 1000;
 }
 
 
@@ -2944,4 +3000,99 @@ figcaption {
         right: 30px;
         bottom: 100px;
     }
+}
+
+.button-group {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-appointment,
+.btn-results {
+    padding: 10px 22px;
+    font-size: 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
+}
+
+/* Primary Button */
+.btn-appointment {
+    background: #1e73be;
+    /* your preferred color */
+    color: #fff;
+}
+
+.btn-appointment:hover {
+    background: #fff;
+    color: #1e73be;
+    text-decoration: none;
+}
+
+/* Secondary Button */
+.btn-results {
+    background: #ffffff;
+    color: #1e73be;
+    border: 2px solid #1e73be;
+}
+
+.btn-results:hover {
+    background: #1e73be;
+    color: #fff;
+    text-decoration: none;
+}
+
+.floating_btn_call {
+    position: fixed;
+    bottom: 330px;
+    right: 30px;
+    width: 100px;
+    height: 100px;
+    /* display: none; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+@keyframes pulsing {
+    to {
+        box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
+    }
+}
+
+.contact_icon_call {
+    background-color: #358ef9;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translatey(0px);
+    animation: pulse 1.5s infinite;
+    box-shadow: 0 0 0 0 #358ef9;
+    -webkit-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    font-weight: normal;
+    font-family: sans-serif;
+    text-decoration: none !important;
+    transition: all 300ms ease-in-out;
+}
+
+.text_icon_call {
+    margin-top: 8px;
+    color: #000000;
+    font-size: 13px;
 }
