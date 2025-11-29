@@ -237,9 +237,12 @@ header {
 /* Navbar container already flex, push Arabic button to right */
 .buttons-wrapper-container {
     display: flex;
-    justify-content: flex-end; /* push content to right */
-    align-items: center;       /* vertical alignment */
-    width: 100%;               /* fill available space */
+    justify-content: flex-end;
+    /* push content to right */
+    align-items: center;
+    /* vertical alignment */
+    width: 100%;
+    /* fill available space */
 }
 
 /* Button wrapper */
@@ -247,15 +250,17 @@ header {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    align-items: flex-end;     /* stick buttons to right */
-    margin-left: auto;         /* ensure right alignment in flex */
+    align-items: flex-end;
+    /* stick buttons to right */
+    margin-left: auto;
+    /* ensure right alignment in flex */
 }
 
 /* Arabic button */
 .arabic-btn {
     display: block;
     background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     border: none;
     padding: 10px 20px;
     border-radius: 6px;
@@ -358,7 +363,13 @@ header {
 }
 
 
-
+@media (width: 1920px) and (height: 1080px) {
+    .navbar-brand img {
+        width: 850px; /* your desired width */
+        max-width: 100% !important;
+        padding-top: 10px;
+    }
+}
 
 /*-------------------------------------------------*/
 /* = General /*-------------------------------------------------*/
