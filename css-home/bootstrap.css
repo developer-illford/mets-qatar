@@ -3179,12 +3179,14 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 }
 .navbar-default .navbar-toggle {
   border-color:#dddddd;
+  margin-top: 20px;
 }
 .navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus {
   background-color:#dddddd;
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color:#cccccc;
+  
 }
 .navbar-default .navbar-collapse,.navbar-default .navbar-form {
   border-color:#e6e6e6;

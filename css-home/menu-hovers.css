@@ -294,7 +294,7 @@ nav a:hover,nav a:focus {
 	left:0;
 	width:100%;
 	height:1px;
-	background:#fff;
+	background:#168840;
 	content:'';
 	opacity:0.2;
 	-webkit-transition:opacity 0.3s,height 0.3s;

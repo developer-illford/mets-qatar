@@ -53,6 +53,7 @@ header {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     -o-box-shadow: none;
+
 }
 
 .navbar-static-top {
@@ -76,6 +77,7 @@ header {
 .navbar-brand img {
     width: 650px;
     max-width: 100% !important;
+    padding-top: 10px;
 }
 
 .innher-header {
@@ -84,21 +86,32 @@ header {
     justify-content: space-between; */
     padding: 0 15px;
     padding-left: 0;
-    background: linear-gradient(90deg, #fff 0%, #0fa4b8 50%, #0872d6 100%);
+    /* background: linear-gradient(90deg, #fff 0%, #0fa4b8 50%, #0872d6 100%); */
     /* background: linear-gradient(90deg, #fff 0%, #239bac 50%, #0872d6 100%); */
+    background: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 @media screen and (max-width:512px) {
     .innher-header {
 
-        background: linear-gradient(180deg, #fff 0%, #0fa4b8 50%, #0872d6 100%);
+        background: #ffffff;
     }
 }
 
 .navbar-nav {
-    margin-top: 21px;
+    /* margin-top: 21px;
     margin-bottom: 22px;
-    margin-right: 15px;
+    margin-right: 15px; */
+    margin: 0;
+    /* Remove previous margin-top pushing it down */
+    padding: 0;
+}
+
+.navbar-nav,
+.header-social-strip {
+    float: none !important;
 }
 
 .navbar-default .navbar-nav>li {
@@ -125,7 +138,7 @@ header {
 
 .navbar-default .navbar-nav>li>a:hover,
 .navbar-default .navbar-nav>li>a.active {
-    color: #fff;
+    color: #000000;
 }
 
 .navbar-default .navbar-nav>li>a:after {}
@@ -155,6 +168,195 @@ header {
 .navbar-default .navbar-toggle:focus {
     background: #fff;
 }
+
+.nav-divider hr {
+    border-top: 2px solid #0d8539;
+    padding-top: 20px !important;
+    width: 100%;
+}
+
+.navbar-header {
+    margin-bottom: 30px;
+    /* pushes the line down visually */
+}
+
+.navbar .navbar-collapse {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+
+}
+
+.header-social-strip {
+    display: flex !important;
+    gap: 18px;
+    align-items: center;
+
+}
+
+.fa-brands {
+    color: #000000 !important;
+
+}
+
+.header_col4_sub {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: -50px;
+    transform: translateX(30px);
+    /* adjust value */
+
+
+
+}
+
+.header_col4_sub i {
+    background-color: #168840;
+    padding: 10px;
+    border-radius: 50%;
+    color: #fff;
+
+}
+
+.header_col4 p {
+    margin: 0;
+    font-weight: bold;
+    line-height: 0;
+}
+
+.header_col4 a {
+    text-decoration: none;
+    color: #000;
+
+}
+
+/* Container pushes content to the right */
+/* Navbar container already flex, push Arabic button to right */
+.buttons-wrapper-container {
+    display: flex;
+    justify-content: flex-end; /* push content to right */
+    align-items: center;       /* vertical alignment */
+    width: 100%;               /* fill available space */
+}
+
+/* Button wrapper */
+.buttons-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;     /* stick buttons to right */
+    margin-left: auto;         /* ensure right alignment in flex */
+}
+
+/* Arabic button */
+.arabic-btn {
+    display: block;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    margin-top: 30px;
+}
+
+
+
+/* .checkresult-btn {
+    display: block;
+    padding: 14px 30px;
+    margin: 5px;
+    background-color: #0d8539;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    text-align: center;
+    white-space: nowrap;
+  
+}
+
+.checkresult-btn-container {
+    margin-right: 50px;
+  
+}
+
+.checkresult-btn:hover {
+    color: #ffffff;
+    text-decoration: none;
+} */
+
+/* ===========================
+   🔵 Default (Desktop > 1200px)
+   =========================== */
+.buttons-wrapper {
+    position: absolute;
+    left: 200%;
+    top: 0;
+    transform: translateY(10%);
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+
+@media (max-width: 769px) {
+
+    /* Stack everything vertically inside collapse */
+    .navbar-collapse {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    /* Nav links full width, hide initially */
+    .navbar-nav {
+        display: none !important;
+        width: 100%;
+        order: 1;
+        /* appear first */
+    }
+
+    /* Show nav links when expanded */
+    .navbar-collapse.in .navbar-nav,
+    .navbar-collapse.show .navbar-nav {
+        display: block !important;
+    }
+
+    /* Each nav link full width */
+    .navbar-nav>li {
+        width: 100%;
+    }
+
+    /* Phone section below nav links */
+    .header_col4 {
+        order: 2;
+        /* below nav links */
+        width: 100%;
+        display: none;
+        text-align: center;
+        margin-top: 15px;
+        /* spacing below menu */
+    }
+
+    /* Show phone only when menu expanded */
+    .navbar-collapse.in .header_col4,
+    .navbar-collapse.show .header_col4 {
+        display: block;
+    }
+
+    /* Optional: fix phone icon & text alignment */
+    .header_col4_sub {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+}
+
 
 
 
@@ -2565,7 +2767,7 @@ html {
 
 @media screen and (max-width:768px) {
     .about-block-overlay-box {
-        top: 30px;
+        top: 60px;
         width: 100%;
         background: #0000009a;
         color: #fff;
@@ -2706,53 +2908,6 @@ html {
 .logo-container {
     position: relative;
     /* required */
-}
-
-
-.buttons-wrapper-container {
-    margin-left: auto !important;
-    /* THIS ALWAYS WORKS */
-}
-
-.buttons-wrapper {
-    position: absolute;
-    left: 200%;
-    /* move fully to right */
-    top: 0;
-    /* optional: center vertically */
-    transform: translateY(10%);
-
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.arabic-btn {
-    display: block;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    border: none;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 6px;
-}
-
-.checkresult-btn {
-    display: block;
-    padding: 14px 30px;
-    margin: 5px;
-    background-color: #0d8539;
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
-    text-align: center;
-    white-space: nowrap;
-    /* keep text in one line */
-}
-
-.checkresult-btn-container {
-    margin-right: 50px;
-    /* only affects Check Results */
 }
 
 
@@ -2942,7 +3097,7 @@ figcaption {
 
 .floating_btn_helpline {
     position: fixed;
-    bottom: 220px;
+    bottom: 120px;
     right: 30px;
     width: 100px;
     height: 100px;
@@ -3024,6 +3179,7 @@ figcaption {
     background: #1e73be;
     /* your preferred color */
     color: #fff;
+    border-radius: 10px;
 }
 
 .btn-appointment:hover {
@@ -3037,6 +3193,7 @@ figcaption {
     background: #ffffff;
     color: #1e73be;
     border: 2px solid #1e73be;
+    border-radius: 10px;
 }
 
 .btn-results:hover {
@@ -3047,7 +3204,7 @@ figcaption {
 
 .floating_btn_call {
     position: fixed;
-    bottom: 330px;
+    bottom: 200px;
     right: 30px;
     width: 100px;
     height: 100px;
@@ -3095,4 +3252,79 @@ figcaption {
     margin-top: 8px;
     color: #000000;
     font-size: 13px;
+}
+
+.card {
+    box-shadow: 0px 4px 8px 0px #BDBDBD;
+}
+
+.profile-pic {
+    width: 100px !important;
+    height: 100px;
+    box-shadow: 0px 4px 8px 0px #BDBDBD;
+}
+
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel .owl-nav button.owl-prev {
+    background: 0 0;
+    color: #1E88E5 !important;
+    border: none;
+    padding: 5px 20px !important;
+    font: inherit;
+    font-size: 50px !important;
+}
+
+.owl-carousel .owl-nav button.owl-next:hover,
+.owl-carousel .owl-nav button.owl-prev:hover {
+    color: #0D47A1 !important;
+    background-color: transparent !important;
+}
+
+.owl-dots {
+    display: none;
+}
+
+button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0;
+}
+
+.item {
+    display: none;
+}
+
+.next {
+    display: block !important;
+    position: relative;
+    transform: scale(0.8);
+    transition-duration: 0.3s;
+    opacity: 0.6;
+}
+
+.prev {
+    display: block !important;
+    position: relative;
+    transform: scale(0.8);
+    transition-duration: 0.3s;
+    opacity: 0.6;
+}
+
+.item.show {
+    display: block;
+    transition-duration: 0.4s;
+}
+
+@media screen and (max-width: 999px) {
+
+    .next,
+    .prev {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    .item {
+        display: block !important;
+    }
 }
