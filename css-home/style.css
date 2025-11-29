@@ -363,13 +363,13 @@ header {
 }
 
 
-@media (width: 1920px) and (height: 1080px) {
+/* @media (width: 1920px) and (height: 1080px) {
     .navbar-brand img {
-        width: 850px; /* your desired width */
+        width: 850px; 
         max-width: 100% !important;
         padding-top: 10px;
     }
-}
+} */
 
 /*-------------------------------------------------*/
 /* = General /*-------------------------------------------------*/
@@ -3015,12 +3015,12 @@ html {
     font-size: 17px;
 }
 
-@media screen and (max-width:1559px) {
+/* @media screen and (max-width:1559px) {
     .navbar-brand img {
         width: 330px;
 
     }
-}
+} */
 
 .caption-heading {
     font-size: 20px !important;
