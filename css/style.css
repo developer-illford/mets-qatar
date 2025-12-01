@@ -21,6 +21,9 @@ Table of CSS
 /* Removes the blank space Google adds on top */
 body {
     top: 0px !important;
+    font-family: 'Roboto', sans-serif;
+
+
 }
 
 /* Rise effect initial state */

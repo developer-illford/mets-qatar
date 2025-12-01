@@ -16,9 +16,11 @@
     <link href="fonts-sub/font-awesome.css" rel="stylesheet" type="text/css">
     <link href="fonts-sub/elegant-fonts.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="bootstrap-sub/css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="css-sub/owl.carousel.css" type="text/css">
     <link rel="stylesheet" href="css-sub/style.css" type="text/css">
+    <link rel="stylesheet" href="css-sub/subservices-fontstyle.css">
 
     <!-- Font Awesome link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -2244,6 +2246,101 @@
 			</div>
 		</a>
 	</div>
+
+    <!-- Google Translate element -->
+	<script>
+		const toggleBtn = document.getElementById('langToggle');
+
+		// Set cookie function for Google Translate
+		function setTranslateCookie(lang) {
+			const value = `/en/${lang}`;
+			document.cookie = `googtrans=${value}; path=/; domain=${location.hostname};`;
+			document.cookie = `googtrans=${value}; path=/;`;
+		}
+
+		// Reload page with language after setting cookie
+		function switchLanguage(lang) {
+			setTranslateCookie(lang);
+			window.location.reload();
+		}
+
+		// Initialize button
+		window.addEventListener('load', () => {
+			const cookie = document.cookie.match(/googtrans=\/en\/(ar|en)/);
+			const currentLang = cookie ? cookie[1] : "en";
+			toggleBtn.innerText = currentLang === "ar" ? "English" : "Arabic";
+
+			toggleBtn.addEventListener("click", () => {
+				const newLang = currentLang === "ar" ? "en" : "ar";
+				switchLanguage(newLang);
+			});
+		});
+	</script>
+
+	<!-- Google Translate script -->
+	<div id="google_translate_element"></div>
+	<script type="text/javascript">
+		function googleTranslateElementInit() {
+			new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+		}
+	</script>
+	<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+	<style>
+		* Hide the Google top banner iframe */ .goog-te-banner-frame,
+		.goog-te-banner-frame.skiptranslate {
+			display: none !important;
+		}
+
+		/* Remove injected top padding */
+		body {
+			top: 0px !important;
+			position: static !important;
+		}
+
+		/* Remove the Google translate tooltip box */
+		#goog-gt-tt,
+		.goog-tooltip,
+		.goog-tooltip:hover {
+			display: none !important;
+			visibility: hidden !important;
+		}
+
+		/* Remove the floating bottom-left language popup */
+		.goog-te-gadget-simple,
+		.goog-te-gadget,
+		.goog-te-gadget span,
+		.goog-te-gadget-icon {
+			display: none !important;
+			visibility: hidden !important;
+		}
+
+		/* Remove iframes */
+		iframe.goog-te-banner-frame,
+		iframe.goog-te-menu-frame {
+			display: none !important;
+			visibility: hidden !important;
+		}
+
+		/* Remove the giant wrapper Google sometimes injects */
+		.skiptranslate {
+			display: none !important;
+		}
+
+		/* Remove extra top space Google inserts */
+		body {
+			top: 0 !important;
+		}
+	</style>
+	<script>
+		function hideGoogleBanner() {
+			const iframe = document.querySelector('.goog-te-banner-frame');
+			if (iframe) iframe.style.display = 'none';
+			document.body.style.top = '0px';
+		}
+
+		// Try repeatedly (Google injects late)
+		setInterval(hideGoogleBanner, 500);
+	</script>
 
 </body>
 

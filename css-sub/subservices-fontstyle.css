@@ -1,0 +1,15 @@
+/* 🔥 Hide Google Translate Top Banner */
+.goog-te-banner-frame,
+.goog-te-menu-frame,
+.goog-te-gadget-icon {
+    display: none !important;
+}
+
+/* Removes the blank space Google adds on top */
+/* Reset default spacing */
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: 'Poppins', sans-serif !important;
+    box-sizing: border-box;
+}
