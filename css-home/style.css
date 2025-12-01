@@ -213,7 +213,7 @@ header {
     justify-content: space-around;
     margin-top: -50px;
     /* transform: translateX(30px); */
-      transform: translate(750%, 90%);
+    transform: translate(750%, 90%);
     /* X = right, Y = up */
     /* adjust value */
 
@@ -366,6 +366,176 @@ header {
     }
 } */
 
+@media(max-width:1366px) {
+    .header_col4_sub {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: -50px;
+        /* transform: translateX(30px); */
+        transform: translate(650%, 90%);
+        /* X = right, Y = up */
+        /* adjust value */
+
+
+
+    }
+}
+
+
+/* ============================================================
+   🟡  Large Laptops (1200px - 1399px)
+===============================================================*/
+@media (max-width:1399px) {
+    .navbar-brand img {
+        width: 500px;
+        margin-left: 200px;
+    }
+
+    .buttons-wrapper {
+        right: 500px;
+        transform: translateY(40%);
+    }
+}
+
+
+
+/* ============================================================
+   🔵  Standard Laptop (1024px - 1199px)
+===============================================================*/
+@media (max-width:1199px) {
+    .navbar-brand img {
+        width: 420px;
+        margin-left: 120px;
+    }
+
+    .buttons-wrapper {
+        right: 350px;
+    }
+}
+
+
+
+/* ============================================================
+   🟣  Tablet Landscape (992px - 1023px)
+===============================================================*/
+@media (max-width:1023px) {
+    .navbar-brand img {
+        width: 350px;
+        margin-left: 80px;
+    }
+
+    .buttons-wrapper {
+        right: 250px;
+    }
+}
+
+
+
+/* ============================================================
+   🟠  Tablet Portrait (769px - 991px)
+   - Shrink logo
+   - Buttons move closer
+===============================================================*/
+@media (max-width:991px) {
+    .navbar-brand img {
+        width: 280px;
+        margin-left: 50px;
+        padding-top: 5px;
+    }
+
+    .buttons-wrapper {
+        right: 150px;
+        transform: translateY(30%);
+    }
+}
+
+
+
+/* ============================================================
+   🔴  Mobile & Tablet Collapse Menu (<768px)
+===============================================================*/
+@media (max-width:768px) {
+
+    /* LOGO */
+    .navbar-brand img {
+        width: 250px;
+        margin-left: 0;
+    }
+
+    /* MOVE ARABIC BUTTON UNDER LOGO */
+    .buttons-wrapper {
+        position: relative;
+        right: 0;
+        top: 10px;
+        transform: none;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .arabic-btn {
+        padding: 8px 18px;
+        margin-top: 10px;
+    }
+
+    /* SHOW PHONE UNDER MENU */
+    .header_col4_sub {
+        justify-content: center;
+        transform: none;
+        margin-top: 10px;
+    }
+}
+
+
+
+/* ============================================================
+   🔥 Small Phones (480px - 600px)
+===============================================================*/
+@media (max-width:600px) {
+    .navbar-brand img {
+        width: 210px;
+    }
+
+    .arabic-btn {
+        padding: 6px 14px;
+        font-size: 14px;
+    }
+}
+
+
+/* ============================================================
+   Ultra Small Phones (<380px)
+===============================================================*/
+@media (max-width:380px) {
+    .navbar-brand img {
+        width: 160px;
+    }
+
+    .arabic-btn {
+        font-size: 13px;
+        padding: 5px 12px;
+    }
+
+    .header_col4_sub p {
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*-------------------------------------------------*/
 /* = General /*-------------------------------------------------*/
 body {
@@ -511,7 +681,7 @@ body {
 .flexcaption>p {
     color: #ffffff;
     font-size: 26px;
-     font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-weight: 300;
     line-height: 27px;
     max-width: 640px;
@@ -748,7 +918,7 @@ figure.effect-zoe figcaption>span {
 figure.effect-zoe figcaption>span::before {
     display: inline-block;
     padding: 8px 10px;
-   font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     speak: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -921,7 +1091,7 @@ figure.effect-bubba p {
     transition: opacity 0.35s, transform 0.35s;
     -webkit-transform: translate3d(0, 20px, 0);
     transform: translate3d(0, 20px, 0);
-  font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-size: 19px;
 }
 
@@ -966,7 +1136,7 @@ figure.effect-bubba:hover p {
     font-size: 50px;
     color: #358eef;
     text-align: center;
-  font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-weight: 400;
 }
 
@@ -1061,14 +1231,14 @@ figure.effect-bubba:hover p {
     font-size: 50px;
     color: #707070;
     text-align: center;
-  font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-weight: 100;
 }
 
 .promo-section h5 {
     font-size: 28px;
     font-weight: 300 !important;
-   font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     text-align: center;
     color: #707070;
     margin: 26px 0 16px 0;
@@ -1100,7 +1270,7 @@ figure.effect-bubba:hover p {
 .title-section p {
     color: #adadad;
     font-size: 18px;
-font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-weight: 300;
     line-height: 24px;
     margin: 0;
@@ -1456,7 +1626,7 @@ ul.filter li a.active {
 .services-post-content p {
     color: #a8a8a8;
     font-size: 15px;
- font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-weight: 300;
     margin: 0;
     line-height: 22px;
@@ -1540,7 +1710,7 @@ ul.filter li a.active {
     display: inline-block;
     color: #fff;
     font-size: 14px;
-   font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-weight: 300;
     margin: 0;
 }
@@ -1716,7 +1886,7 @@ ul.post-tags li:first-child {
 
 ul.post-tags li a {
     display: inline-block;
-   font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-weight: 300;
     font-size: 15px;
     color: #fff;
@@ -1768,7 +1938,7 @@ ul.post-tags li a i {
 }
 
 .blog-post h2 {
-  font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-weight: 300;
     font-size: 19px;
     color: #000000;
@@ -1795,7 +1965,7 @@ ul.post-tags li a i {
 }
 
 .blog-post p {
-  font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-size: 15px;
     color: #000000;
     line-height: 22px;
@@ -1884,7 +2054,7 @@ ul.post-tags li a i {
     font-weight: 300;
     line-height: 26px;
     color: #fff;
-font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     margin-bottom: 17px;
     background: rgba(255, 255, 255, 0.1);
     padding: 40px;
@@ -1905,7 +2075,7 @@ ul.contact-info-list {
     justify-content: center;
     font-size: 16px;
     color: #fff;
- font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-weight: 300;
     margin-right: -5px;
     line-height: 22px;
@@ -2005,7 +2175,7 @@ ul.contact-info-list {
 .comment-form textarea {
     color: #fff;
     font-size: 14px;
-  font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-weight: 300;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-left: none;
@@ -2049,7 +2219,7 @@ ul.contact-info-list {
     text-align: center;
     color: #fff;
     font-size: 14px;
- font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-weight: 300;
     padding: 24px;
     background: #358eef;
@@ -2070,7 +2240,7 @@ ul.contact-info-list {
 .comment-form .message {
     height: 20px;
     font-size: 13px;
-   font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-weight: 300;
     float: none;
     margin-top: 5px;
@@ -2106,7 +2276,7 @@ footer {
 footer p {
     font-size: 16px;
     color: #000;
-   font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-weight: 300;
     margin: 21px 0;
     text-align: center;
@@ -2178,7 +2348,7 @@ ul.social-icons li a:hover {
 
 .single-post h1 {
     font-size: 28px;
-   font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     color: #000;
     font-weight: 300;
     margin-bottom: 15px;
@@ -2187,7 +2357,7 @@ ul.social-icons li a:hover {
 .single-post p {
     color: #8b8b8b;
     font-size: 20px;
- font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-weight: 300;
     line-height: 26px;
     margin: 0 0 20px;
@@ -2265,7 +2435,7 @@ ul.depth li:before {
 }
 
 .comment-content p {
-font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-weight: 300;
     color: #8b8b8b;
     font-size: 15px;
@@ -2285,7 +2455,7 @@ font-family: 'Poppins', sans-serif !important;
 .search-widget input[type="search"] {
     color: #716565;
     font-size: 13px;
-   font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-weight: 300;
     padding: 15px 20px;
     border: 1px solid #dcdcdc;
@@ -2322,7 +2492,7 @@ font-family: 'Poppins', sans-serif !important;
 }
 
 .sidebar-widgets .widget>p {
-   font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-weight: 300;
     color: #8b8b8b;
     font-size: 15px;
@@ -2344,7 +2514,7 @@ ul.tag-widget-list li a {
     display: inline-block;
     font-size: 12px;
     color: #8b8b8b;
-  font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-weight: 300;
     padding: 5px 8px;
     text-decoration: none;
@@ -2790,7 +2960,7 @@ html {
 }
 
 .timeline-block h3 {
-  font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     color: #000;
     font-size: 35px;
     text-align: center;
@@ -2828,14 +2998,14 @@ html {
 
 .cta-block h3 {
     color: #fff;
-  font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-weight: 600;
     font-size: 30px;
 }
 
 .cta-block p {
     color: #fff;
- font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-weight: 300;
     /* font-size: 30px; */
 }
@@ -2843,7 +3013,7 @@ html {
 .cta-block button {
     background-color: #358eef;
     color: #fff;
-   font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-weight: 600;
     padding: 15px 25px;
     border: none;
@@ -2853,7 +3023,7 @@ html {
 .cta-block button:hover {
     background-color: #ffffff;
     color: #358eef;
-   font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-weight: 600;
     padding: 15px 25px;
     border: 2px solid #358eef;
@@ -2873,7 +3043,7 @@ html {
 }
 
 .grey-container h5 {
-   font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     color: #000;
     font-weight: 500;
 }
@@ -2921,7 +3091,7 @@ html {
 
 
 .bold-backdrop {
-     font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     /* background-color: #358eef; */
     color: #358eef;
     font-weight: 650;
@@ -3147,7 +3317,7 @@ figcaption {
     font-family: sans-serif;
     text-decoration: none !important;
     transition: all 300ms ease-in-out;
-    
+
 }
 
 
