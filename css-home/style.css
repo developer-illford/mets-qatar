@@ -358,13 +358,17 @@ header {
 }
 
 
-/* @media (width: 1920px) and (height: 1080px) {
+@media (width: 1948px){
     .navbar-brand img {
-        width: 850px; 
+        width: 650px;
         max-width: 100% !important;
         padding-top: 10px;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-left: 600px !important;
     }
-} */
+}
 
 @media(max-width:1366px) {
     .header_col4_sub {
@@ -383,20 +387,6 @@ header {
 }
 
 
-/* ============================================================
-   🟡  Large Laptops (1200px - 1399px)
-===============================================================*/
-@media (max-width:1399px) {
-    .navbar-brand img {
-        width: 500px;
-        margin-left: 200px;
-    }
-
-    .buttons-wrapper {
-        right: 500px;
-        transform: translateY(40%);
-    }
-}
 
 
 
