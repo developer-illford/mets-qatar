@@ -353,24 +353,24 @@ $.fn.countTo.defaults = {
 };
 // Rise effect
 
-document.addEventListener("DOMContentLoaded", () => {
-    // Select all elements you want to animate
-    const elements = document.querySelectorAll("body *");
+// document.addEventListener("DOMContentLoaded", () => {
+  
+//     const elements = document.querySelectorAll("body *");
 
-    elements.forEach(el => {
-        el.classList.add("rise");
-    });
+//     elements.forEach(el => {
+//         el.classList.add("rise");
+//     });
 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("rise-show");
-                observer.unobserve(entry.target); // animate once
-            }
-        });
-    }, {
-        threshold: 0.12
-    });
+//     const observer = new IntersectionObserver(entries => {
+//         entries.forEach(entry => {
+//             if (entry.isIntersecting) {
+//                 entry.target.classList.add("rise-show");
+//                 observer.unobserve(entry.target); 
+//             }
+//         });
+//     }, {
+//         threshold: 0.12
+//     });
 
-    elements.forEach(el => observer.observe(el));
-});
+//     elements.forEach(el => observer.observe(el));
+// });
