@@ -4112,13 +4112,13 @@ readers do not read off random characters that represent icons */
 .fa-pills:before {
   content: "\f484"; }
 
-.fa-pinterest:before {
+.fa-instagram:before {
   content: "\f0d2"; }
 
-.fa-pinterest-p:before {
+.fa-instagram-p:before {
   content: "\f231"; }
 
-.fa-pinterest-square:before {
+.fa-instagram-square:before {
   content: "\f0d3"; }
 
 .fa-pizza:before {
