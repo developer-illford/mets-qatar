@@ -202,9 +202,9 @@
 
 				<!-- Right side language + hamburger -->
 				<div class="mobile-right">
-					<button class="lang-btn" id="langToggle">
+					<!-- <button class="lang-btn" id="langToggle">
 						<img src="https://flagcdn.com/24x18/qa.png" alt="lang">
-					</button>
+					</button> -->
 
 					<button class="hamburger" id="hamburgerBtn">
 						<span class="bar"></span>
@@ -238,18 +238,16 @@
 							<li><a href="blog/">Blog</a></li>
 							<li><a href="contact.html">Contact</a></li>
 							<!-- Login button at bottom -->
-							<li class="mobile-login">
+							<!-- <li class="mobile-login">
 								<button class="account-btn mobile-account-btn">Login / Register</button>
-							</li>
+							</li> -->
 						</ul>
 
 						<div class="nav-right">
-							<button class="lang-btn" id="langToggle">
-								<img id="langFlag" src="https://flagcdn.com/24x18/qa.png" alt="lang">
-								▾
-							</button>
+							<button class="lang-btn lang-toggle notranslate" id="langToggle" translate="no">AR</button>
 
-							<button class="account-btn">Login/Register</button>
+
+							<!-- <button class="account-btn">Login/Register</button> -->
 						</div>
 
 					</nav>
@@ -1437,31 +1435,32 @@
 
 		window.addEventListener("load", () => {
 			const btn = document.getElementById("langToggle");
-			const flag = document.getElementById("langFlag");
 
 			// Detect current language
 			const match = document.cookie.match(/googtrans=\/(en|ar)\/(en|ar)/);
 			const current = match ? match[2] : "en";
 
-			// YOUR REQUIRED BEHAVIOR:
-			// English (default) → Qatar flag
-			// Arabic → UK flag
+			// --- REQUIRED BEHAVIOR ---
+			// If site is English → BUTTON shows AR
+			// If site is Arabic → BUTTON shows EN
+			// -------------------------
 
 			if (current === "ar") {
-				// When site is Arabic → show UK flag
-				flag.src = "https://flagcdn.com/24x18/gb.png";
+				btn.textContent = "EN";  // show opposite
+				btn.classList.add("ar");
 			} else {
-				// When site is English → show Qatar flag
-				flag.src = "https://flagcdn.com/24x18/qa.png";
+				btn.textContent = "AR";  // show opposite
+				btn.classList.remove("ar");
 			}
 
-			// Toggle language on click
+			// Toggle on click
 			btn.addEventListener("click", () => {
 				const newLang = current === "ar" ? "en" : "ar";
 				switchLanguage(newLang);
 			});
 		});
 	</script>
+
 	<!-- Google Translate script -->
 	<div id="google_translate_element"></div>
 	<script type="text/javascript">

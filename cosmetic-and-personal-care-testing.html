@@ -27,54 +27,68 @@
 <body>
     <div class="outer-wrapper homepage">
         <div class="page-wrapper">
-            <div class="navigation-off-canvas">
-                <!-- <h2>&nbsp;</h2> -->
-                <img style="width: 100%; padding: 10px;" src="images/mets-lab-banner-logo - Copy.png" alt="">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="accreditations.html">Accreditations</a></li>
-                    <li><a href="careers.html">Career</a></li>
-                    <li><a href="blog/">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <ul class="social-strip">
-                    <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-                    <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-                    <li><a href=""><i class="fa-brands fa-x-twitter"></i></a></li>
-                    <!-- <li><a href=""><i class="fa-brands fa-linkedin"></i></a></li> -->
-                    <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
-                </ul>
-            </div>
-            <!--end navigation-off-canvas-->
-            <div id="page-header">
-                <header>
-                    <div class="navigation">
-                        <div class="left">
-                            <a href="index.html" class="brand"><img src="images/mets-lab-logo.png" alt=""></a>
-                            <a class="main-nav-item" href="index.html">Home</a>
-                            <a class="main-nav-item" href="about.html">About</a>
-                            <a class="main-nav-item" href="services.html">Services</a>
-                            <a class="main-nav-item" href="accreditations.html">Accreditations</a>
-                            <a class="main-nav-item" href="careers.html">Career</a>
-                            <a class="main-nav-item" href="blog/">Blog</a>
-                            <a class="main-nav-item" href="contact.html">Contact</a>
-                        </div>
-                        <!--end left-->
-                        <div class="right">
-                            <div class="nav-btn">
-                                <figure></figure>
-                                <figure></figure>
-                                <figure></figure>
-                            </div>
-                        </div>
-                        <!--end right-->
+            <section class="header-area">
+                <!-- NEW MOBILE HEADER STARTS HERE -->
+                <div class="mobile-header">
+
+                    <!-- Left side -->
+                    <div class="mobile-left">
+                        <img src="images/mets_lab_logo_small.webp" alt="Logo">
+                        <h3>MIDDLE EAST TESTING SERVICES W.L.L QATAR</h3>
                     </div>
-                    <!--end navigation-->
+
+                    <!-- Right side language + hamburger -->
+                    <div class="mobile-right">
+                        <!-- <button class="lang-btn" id="langToggle">
+						<img src="https://flagcdn.com/24x18/qa.png" alt="lang">
+					</button> -->
+
+                        <button class="hamburger" id="hamburgerBtn">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </button>
+                    </div>
+                </div>
+                <!-- NEW MOBILE HEADER ENDS HERE -->
+
+
+                <!-- TOP: Logo + Heading -->
+                <div class="top-header-wrapper">
+                    <div class="top-left">
+                        <img src="images/mets_lab_logo_small.webp" alt="Logo">
+                    </div>
+
+                    <div class="top-right">
+                        <h3>MIDDLE EAST TESTING SERVICES W.L.L QATAR</h3>
+                    </div>
+                </div>
+
+                <!-- GLASS NAVBAR -->
+                <header class="main-header">
+                    <div class="nav-container">
+
+                        <nav class="navbar">
+
+                            <ul class="nav-menu" id="mobileMenu">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="accreditations.html">Accreditations</a></li>
+                                <li><a href="careers.html">Careers</a></li>
+                                <li><a href="blog/">Blog</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+
+                            <div class="nav-right">
+                                <button class="lang-btn lang-toggle notranslate" id="langToggle"
+                                    translate="no">AR</button>
+                            </div>
+
+                        </nav>
+                    </div>
                 </header>
-                <!--end header-->
-            </div>
+            </section>
             <!--end page-header-->
 
             <div id="page-content">
@@ -270,31 +284,47 @@
 		</a>
 	</div>
 
-    <!-- Google Translate element -->
-	<script>
-		const toggleBtn = document.getElementById('langToggle');
+   <!-- Google Translate element -->
 
-		// Set cookie function for Google Translate
+
+
+	<script>
 		function setTranslateCookie(lang) {
-			const value = `/en/${lang}`;
+			const from = lang === "ar" ? "en" : "ar";
+			const value = `/${from}/${lang}`;
+
 			document.cookie = `googtrans=${value}; path=/; domain=${location.hostname};`;
 			document.cookie = `googtrans=${value}; path=/;`;
 		}
 
-		// Reload page with language after setting cookie
 		function switchLanguage(lang) {
 			setTranslateCookie(lang);
-			window.location.reload();
+			location.reload();
 		}
 
-		// Initialize button
-		window.addEventListener('load', () => {
-			const cookie = document.cookie.match(/googtrans=\/en\/(ar|en)/);
-			const currentLang = cookie ? cookie[1] : "en";
-			toggleBtn.innerText = currentLang === "ar" ? "English" : "Arabic";
+		window.addEventListener("load", () => {
+			const btn = document.getElementById("langToggle");
 
-			toggleBtn.addEventListener("click", () => {
-				const newLang = currentLang === "ar" ? "en" : "ar";
+			// Detect current language
+			const match = document.cookie.match(/googtrans=\/(en|ar)\/(en|ar)/);
+			const current = match ? match[2] : "en";
+
+			// --- REQUIRED BEHAVIOR ---
+			// If site is English → BUTTON shows AR
+			// If site is Arabic → BUTTON shows EN
+			// -------------------------
+
+			if (current === "ar") {
+				btn.textContent = "EN";  // show opposite
+				btn.classList.add("ar");
+			} else {
+				btn.textContent = "AR";  // show opposite
+				btn.classList.remove("ar");
+			}
+
+			// Toggle on click
+			btn.addEventListener("click", () => {
+				const newLang = current === "ar" ? "en" : "ar";
 				switchLanguage(newLang);
 			});
 		});
