@@ -139,9 +139,9 @@ body {
     margin-top: 40px;
   }
   .top-left img {
-  height: 90px;
+  height: 100px;
   margin-top: -90px !important;
-  margin-left: -100px !important;
+  margin-left: -150px !important;
 }
 
 .top-right h3 {
@@ -152,6 +152,7 @@ body {
   text-align: center;
   font-family: 'Poppins', sans-serif;
   margin-top: -55px !important;
+    margin-left: -80px !important;
 }
 
 }
@@ -262,10 +263,12 @@ body {
 @media (max-width: 768px) {
   .mobile-left img {
     height: 70px;
+   
   }
 
   .mobile-left h3 {
     font-size: 18px;
+     margin-top: -2px !important;
   }
 
   #mobileMenu {
