@@ -128,7 +128,15 @@ body {
     color: #ffffff;
     font-size: 16px;
     font-weight: 500;
+    display: inline-block;
+    transition: transform 0.25s ease, box-shadow 0.3s ease;
 }
+
+
+.nav-menu li a:hover {
+    transform: scale(1.10);
+}
+
 
 /* Right Side */
 .nav-right {
@@ -185,6 +193,13 @@ body {
     color: #fff;
     cursor: pointer;
 }
+
+
+
+
+
+
+
 
 /* .mobile-account-btn {
     display: none;
@@ -332,7 +347,8 @@ body {
     .hamburger.active .bar:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
     }
-/* 
+
+    /* 
     .mobile-account-btn {
         display: block;
     } */
@@ -482,7 +498,8 @@ body {
     .hamburger.active .bar:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
     }
-/* 
+
+    /* 
     .mobile-account-btn {
         display: block;
     } */
