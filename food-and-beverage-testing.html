@@ -13,13 +13,13 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-5Z5D38VZ');</script>
     <!-- End Google Tag Manager -->
-      <title>Food & Beverage Testing in Qatar | Accredited Quality & Safety Lab</title>
+    <title>Food & Beverage Testing in Qatar | Accredited Quality & Safety Lab</title>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="ThemeStarz">
     <meta name="description"
-    content="Get reliable food and beverage testing in Qatar with Metslab’s accredited laboratory services. Ensure safety, compliance, and quality with accurate, fast test results.">
+        content="Get reliable food and beverage testing in Qatar with Metslab’s accredited laboratory services. Ensure safety, compliance, and quality with accurate, fast test results.">
 
     <link href="fonts-sub/font-awesome.css" rel="stylesheet" type="text/css">
     <link href="fonts-sub/elegant-fonts.css" rel="stylesheet" type="text/css">
@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <script src="https://kit.fontawesome.com/6c53136549.js" crossorigin="anonymous"></script>
 
-   
+
 
 </head>
 
@@ -49,22 +49,16 @@
 
     <div class="outer-wrapper homepage">
         <div class="page-wrapper">
-            <section class="header-area">
-                <!-- NEW MOBILE HEADER STARTS HERE -->
-                <div class="mobile-header">
+           <section class="header-area">
 
-                    <!-- Left side -->
+                <!-- MOBILE HEADER -->
+                <div class="mobile-header" id="mobileHeader">
                     <div class="mobile-left">
                         <img src="images/mets_lab_logo_small.webp" alt="Logo">
                         <h3>MIDDLE EAST TESTING SERVICES W.L.L QATAR</h3>
                     </div>
 
-                    <!-- Right side language + hamburger -->
                     <div class="mobile-right">
-                        <!-- <button class="lang-btn" id="langToggle">
-						<img src="https://flagcdn.com/24x18/qa.png" alt="lang">
-					</button> -->
-
                         <button class="hamburger" id="hamburgerBtn">
                             <span class="bar"></span>
                             <span class="bar"></span>
@@ -72,10 +66,8 @@
                         </button>
                     </div>
                 </div>
-                <!-- NEW MOBILE HEADER ENDS HERE -->
 
-
-                <!-- TOP: Logo + Heading -->
+                <!-- DESKTOP HEADER -->
                 <div class="top-header-wrapper">
                     <div class="top-left">
                         <img src="images/mets_lab_logo_small.webp" alt="Logo">
@@ -86,13 +78,13 @@
                     </div>
                 </div>
 
-                <!-- GLASS NAVBAR -->
+                <!-- GLASS NAVBAR (DESKTOP) -->
                 <header class="main-header">
                     <div class="nav-container">
-
                         <nav class="navbar">
 
-                            <ul class="nav-menu" id="mobileMenu">
+                            <!-- DESKTOP MENU ONLY -->
+                            <ul class="nav-menu desktop-menu">
                                 <li><a href="index.html">Home</a></li>
                                 <li><a href="about.html">About</a></li>
                                 <li><a href="services.html">Services</a></li>
@@ -103,14 +95,26 @@
                             </ul>
 
                             <div class="nav-right">
-                                <button class="lang-btn lang-toggle notranslate" id="langToggle"
-                                    translate="no">AR</button>
+                                <button class="lang-toggle" id="langToggle">AR</button>
                             </div>
 
                         </nav>
                     </div>
                 </header>
+
             </section>
+
+
+            <!--  MOBILE MENU MOVED OUTSIDE HEADER (Important!) -->
+            <ul class="nav-menu mobile-fullscreen-menu" id="mobileMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="accreditations.html">Accreditations</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="blog/">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
             <!--end page-header-->
 
             <div id="page-content">
@@ -586,7 +590,32 @@
         // Try repeatedly (Google injects late)
         setInterval(hideGoogleBanner, 500);
     </script>
+<script>
+        const burger = document.getElementById("hamburgerBtn");
+        const menu = document.getElementById("mobileMenu");
+        const header = document.getElementById("mobileHeader");
 
+        burger.addEventListener("click", () => {
+
+            // Get the mobile header height dynamically
+            const headerHeight = header.offsetHeight;
+
+            // Move the menu DOWN by the header height
+            menu.style.top = headerHeight + "px";
+            menu.style.height = `calc(60vh - ${headerHeight}px)`;
+
+            // Toggle animation
+            menu.classList.toggle("menu-open");
+            burger.classList.toggle("active");
+
+            // Optional: disable page scrolling when menu open
+            if (menu.classList.contains("menu-open")) {
+                document.body.style.overflow = "hidden";
+            } else {
+                document.body.style.overflow = "";
+            }
+        });
+    </script>
 </body>
 
 </html>
