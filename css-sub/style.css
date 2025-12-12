@@ -35,7 +35,7 @@ body {
 .header-area {
   background: linear-gradient(90deg, #3bbf8f, #1e4ea7);
   padding: 30px 0 20px 0;
- 
+
 }
 
 /* ================================
@@ -55,7 +55,7 @@ body {
   height: 90px;
   margin-top: -30px !important;
   margin-left: 100px !important;
-     filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3));
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.3));
 }
 
 .top-right h3 {
@@ -122,7 +122,7 @@ body {
   display: none;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1500px) {
 
   .top-header-wrapper {
     display: none;
@@ -160,6 +160,17 @@ body {
   .nav-right {
     display: none;
   }
+
+   .mobile-right {
+    position: relative; /* needed for absolute child */
+  }
+
+  .lang-toggle {
+    position: absolute;
+    top: 40px;  /* move downward */
+    right: 0;   /* keep it aligned on the right */
+  }
+}
 
   /* ================================
       FULLSCREEN MOBILE MENU 
@@ -241,7 +252,7 @@ body {
     transform: rotate(-45deg) translate(5px, -5px);
   }
 
-}
+
 
 @media (max-width: 768px) {
   .mobile-left img {
@@ -973,7 +984,7 @@ ul li {
   bottom: -70px;
   z-index: 1;
   background-color: #ffffffb0;
-      /* box-shadow: 0px 9px 20px 0px #0000009e; */
+  /* box-shadow: 0px 9px 20px 0px #0000009e; */
 }
 
 .gallery .gallery-item .title .name {
@@ -1006,25 +1017,28 @@ ul li {
 
 .gallery .gallery-item .image img {
   max-width: 100%;
-      /* box-shadow: 0px 9px 20px 0px #0000009e; */
+  /* box-shadow: 0px 9px 20px 0px #0000009e; */
 }
-@media(max-width:768px){
+
+@media(max-width:768px) {
   .gallery .gallery-item .title {
-  position: absolute;
-  width: 100%;
-  min-height: 120px;
-  bottom: 0;
-  left: 10px;
-  bottom: -70px;
-  z-index: 1;
-  background-color: #ffffffb0;
-      box-shadow: 0px 9px 20px 0px #0000009e;
+    position: absolute;
+    width: 100%;
+    min-height: 120px;
+    bottom: 0;
+    left: 10px;
+    bottom: -70px;
+    z-index: 1;
+    background-color: #ffffffb0;
+    box-shadow: 0px 9px 20px 0px #0000009e;
+  }
+
+  .gallery .gallery-item .image img {
+    max-width: 100%;
+    box-shadow: 0px 9px 20px 0px #0000009e;
+  }
 }
-.gallery .gallery-item .image img {
-  max-width: 100%;
-      box-shadow: 0px 9px 20px 0px #0000009e;
-}
-}
+
 .hero-section {
   overflow: hidden;
   position: relative;
@@ -3145,7 +3159,7 @@ select option {
     padding: 0 16px;
   }
 
- 
+
 }
 
 
@@ -3360,6 +3374,7 @@ select option {
   font-size: 18px;
   color: #fff;
 }
+
 /* @media (min-width:768px) and (max-width:1199px){
   .locations_sec p {
   font-size: 11px;
