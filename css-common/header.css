@@ -190,7 +190,7 @@
     width: 900px;
     max-width: 95vw;
     background: #fff;
-    padding: 25px 0px;
+    padding: 10px 0px !important;
 
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     z-index: 9999;
