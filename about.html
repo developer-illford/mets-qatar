@@ -29,6 +29,10 @@
     <link rel="stylesheet" href="css-sub/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="css-sub/style.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="css-home/style.css" media="screen">
+    <link
+		href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Marcellus&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&display=swap"
+		rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css-common/header.css"> -->
 
     <!-- Font Awesome link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -53,16 +57,23 @@
 
     <div class="outer-wrapper">
         <div class="page-wrapper">
-            <section class="header-area">
+            <section class="header-area" id="top-header">
+                <!-- <img src="images/header-background-img.png" alt="" class="header-img"> -->
+                <!-- NEW MOBILE HEADER STARTS HERE -->
+                <div class="mobile-header">
 
-                <!-- MOBILE HEADER -->
-                <div class="mobile-header" id="mobileHeader">
+                    <!-- Left side -->
                     <div class="mobile-left">
                         <img src="images/mets_lab_logo_small.webp" alt="Logo">
                         <h3>MIDDLE EAST TESTING SERVICES W.L.L QATAR</h3>
                     </div>
 
+                    <!-- Right side language + hamburger -->
                     <div class="mobile-right">
+                        <!-- <button class="lang-btn" id="langToggle">
+						<img src="https://flagcdn.com/24x18/qa.png" alt="lang">
+					</button> -->
+
                         <button class="hamburger" id="hamburgerBtn">
                             <span class="bar"></span>
                             <span class="bar"></span>
@@ -72,100 +83,80 @@
 
                     </div>
                 </div>
+                <!-- NEW MOBILE HEADER ENDS HERE -->
 
-                <!-- DESKTOP HEADER -->
-                <div class="top-header-wrapper">
-                    <div class="top-left">
-                        <img src="images/mets_lab_logo_small.webp" alt="Logo">
-                    </div>
-
-                    <div class="top-right">
-                        <h3>MIDDLE EAST TESTING SERVICES W.L.L QATAR</h3>
-                    </div>
+                <div class="header-title">
+                    <h3>MIDDLE EAST TESTING SERVICES W.L.L QATAR</h3>
                 </div>
 
-                <!-- GLASS NAVBAR (DESKTOP) -->
+
+                <div class="header-logo">
+                    <img src="images/mets_lab_logo_small.webp" alt="Logo">
+                </div>
+
+
+
                 <header class="main-header">
                     <div class="nav-container">
+
                         <nav class="navbar">
 
-                            <!-- DESKTOP MENU ONLY -->
-                            <ul class="nav-menu desktop-menu">
+
+                            <ul class="nav-menu" id="mobileMenu">
                                 <li><a href="index.html">HOME</a></li>
                                 <li><a href="about.html">ABOUT</a></li>
                                 <li class="dropdown">
-                                    <a href="services.html" class="dropdown-toggle">
-                                        SERVICES
-                                    </a>
+                                    <a href="services.html" class="service-link">
+                                        SERVICES<span class="dropdown-toggle"></span></a>
+
 
                                     <ul class="dropdown-menu">
+                                        <li><a href="services.html">All</a></li>
                                         <li><a href="water-testing-and-risk-assesment.html">Water Testing and Risk
                                                 Assesment</a></li>
                                         <li><a href="food-and-beverage-testing.html">Food and Beverage Testing</a></li>
                                         <li><a href="pharmaceutical-and-healthcare-testing.html">Pharmaceutical and
                                                 Healthcare Testing</a></li>
                                         <li><a href="cosmetic-and-personal-care-testing.html">Cosmetics and Personal
-                                                Care Testing</a></li>
+                                                Care
+                                                Testing</a></li>
                                         <li><a href="oil-gas-and-environmental-testing.html">Oil, Gas &amp;
-                                                Environmental Testing</a></li>
+                                                Environmental
+                                                Testing</a></li>
                                         <li><a href="industrial-and-engineering-testing.html">Industrial & Engineering /
                                                 Material Testing</a></li>
                                         <li><a href="electrical-electronics-safety-testing.html">Electrical, Electronics
-                                                & Safety Testing</a></li>
+                                                &
+                                                Safety Testing</a></li>
                                         <li><a href="durability-and-weathering-test.html">Durability and Weathering
                                                 Tests</a></li>
                                         <li><a href="certification-and-regulatory-tests.html">Certification & Regulatory
                                                 Tests</a></li>
                                     </ul>
                                 </li>
+
+
                                 <li><a href="accreditations.html">ACCREDITATIONS</a></li>
                                 <li><a href="careers.html">CAREERS</a></li>
                                 <li><a href="blog/">BLOG</a></li>
                                 <li><a href="contact.html">CONTACT</a></li>
+                                <!-- Login button at bottom -->
+                                <!-- <li class="mobile-login">
+								<button class="account-btn mobile-account-btn">Login / Register</button>
+							</li> -->
                             </ul>
 
                             <div class="nav-right">
                                 <button class="lang-btn lang-toggle notranslate" id="langToggleDesktop"
                                     translate="no">AR</button>
-
+                                <!-- <button class="account-btn">Login/Register</button> -->
                             </div>
 
                         </nav>
+
                     </div>
                 </header>
-
             </section>
-
-
-            <!--  MOBILE MENU MOVED OUTSIDE HEADER (Important!) -->
-            <ul class="nav-menu mobile-fullscreen-menu" id="mobileMenu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <!-- <li class="dropdown">
-                    <a href="services.html" class="dropdown-toggle">Services </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="water-testing-and-risk-assesment.html">Water Testing and Risk Assesment</a></li>
-                        <li><a href="food-and-beverage-testing.html">Food and Beverage Testing</a></li>
-                        <li><a href="pharmaceutical-and-healthcare-testing.html">Pharmaceutical and Healthcare
-                                Testing</a></li>
-                        <li><a href="cosmetic-and-personal-care-testing.html">Cosmetics and Personal Care Testing</a>
-                        </li>
-                        <li><a href="oil-gas-and-environmental-testing.html">Oil, Gas & Environmental Testing</a></li>
-                        <li><a href="industrial-and-engineering-testing.html">Industrial & Engineering / Material
-                                Testing</a></li>
-                        <li><a href="electrical-electronics-safety-testing.html">Electrical, Electronics & Safety
-                                Testing</a></li>
-                        <li><a href="durability-and-weathering-test.html">Durability and Weathering Tests</a></li>
-                        <li><a href="certification-and-regulatory-tests.html">Certification & Regulatory Tests</a></li>
-                    </ul>
-                </li> -->
-                <li><a href="accreditations.html">Accreditations</a></li>
-                <li><a href="careers.html">Careers</a></li>
-                <li><a href="blog/">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-
-            </ul>
 
             <!--end page-header-->
 
