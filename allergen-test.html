@@ -202,13 +202,14 @@
                         <h3>MIDDLE EAST TESTING SERVICES W.L.L QATAR</h3>
                     </div>
 
-                    <div class="mobile-right">
+                   <div class="mobile-right">
                         <button class="hamburger" id="hamburgerBtn">
                             <span class="bar"></span>
                             <span class="bar"></span>
                             <span class="bar"></span>
                         </button>
-                         <button class="lang-toggle" id="langToggle">AR</button>
+                        <button class="lang-toggle notranslate" id="langToggleMobile" translate="no">AR</button>
+
                     </div>
                 </div>
 
@@ -239,8 +240,9 @@
                                 <li><a href="contact.html">CONTACT</a></li>
                             </ul>
 
-                            <div class="nav-right">
-                                <button class="lang-toggle" id="langToggle">AR</button>
+                          <div class="nav-right">
+                                <button class="lang-btn lang-toggle notranslate" id="langToggleDesktop" translate="no">AR</button>
+
                             </div>
 
                         </nav>
@@ -2243,13 +2245,12 @@
 
 
 
-    <script>
+     <script>
         function setTranslateCookie(lang) {
             const from = lang === "ar" ? "en" : "ar";
             const value = `/${from}/${lang}`;
-
-            document.cookie = `googtrans=${value}; path=/; domain=${location.hostname};`;
             document.cookie = `googtrans=${value}; path=/;`;
+            document.cookie = `googtrans=${value}; path=/; domain=${location.hostname};`;
         }
 
         function switchLanguage(lang) {
@@ -2258,29 +2259,27 @@
         }
 
         window.addEventListener("load", () => {
-            const btn = document.getElementById("langToggle");
+            const buttons = [
+                document.getElementById("langToggleMobile"),
+                document.getElementById("langToggleDesktop")
+            ].filter(Boolean);
 
-            // Detect current language
             const match = document.cookie.match(/googtrans=\/(en|ar)\/(en|ar)/);
             const current = match ? match[2] : "en";
 
-            // --- REQUIRED BEHAVIOR ---
-            // If site is English → BUTTON shows AR
-            // If site is Arabic → BUTTON shows EN
-            // -------------------------
+            buttons.forEach(btn => {
+                if (current === "ar") {
+                    btn.textContent = "EN";
+                    btn.classList.add("ar");
+                } else {
+                    btn.textContent = "AR";
+                    btn.classList.remove("ar");
+                }
 
-            if (current === "ar") {
-                btn.textContent = "EN";  // show opposite
-                btn.classList.add("ar");
-            } else {
-                btn.textContent = "AR";  // show opposite
-                btn.classList.remove("ar");
-            }
-
-            // Toggle on click
-            btn.addEventListener("click", () => {
-                const newLang = current === "ar" ? "en" : "ar";
-                switchLanguage(newLang);
+                btn.addEventListener("click", () => {
+                    const newLang = current === "ar" ? "en" : "ar";
+                    switchLanguage(newLang);
+                });
             });
         });
     </script>

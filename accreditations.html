@@ -51,7 +51,7 @@
 
     <div class="outer-wrapper">
         <div class="page-wrapper">
-           <section class="header-area">
+            <section class="header-area">
 
                 <!-- MOBILE HEADER -->
                 <div class="mobile-header" id="mobileHeader">
@@ -60,13 +60,14 @@
                         <h3>MIDDLE EAST TESTING SERVICES W.L.L QATAR</h3>
                     </div>
 
-                    <div class="mobile-right">
+                        <div class="mobile-right">
                         <button class="hamburger" id="hamburgerBtn">
                             <span class="bar"></span>
                             <span class="bar"></span>
                             <span class="bar"></span>
                         </button>
-                         <button class="lang-toggle" id="langToggle">AR</button>
+                        <button class="lang-toggle notranslate" id="langToggleMobile" translate="no">AR</button>
+
                     </div>
                 </div>
 
@@ -90,15 +91,40 @@
                             <ul class="nav-menu desktop-menu">
                                 <li><a href="index.html">HOME</a></li>
                                 <li><a href="about.html">ABOUT</a></li>
-                                <li><a href="services.html">SERVICES</a></li>
+                                <li class="dropdown">
+                                    <a href="services.html" class="dropdown-toggle">
+                                        SERVICES
+                                    </a>
+
+                                    <ul class="dropdown-menu">
+                                        <li><a href="water-testing-and-risk-assesment.html">Water Testing and Risk
+                                                Assesment</a></li>
+                                        <li><a href="food-and-beverage-testing.html">Food and Beverage Testing</a></li>
+                                        <li><a href="pharmaceutical-and-healthcare-testing.html">Pharmaceutical and
+                                                Healthcare Testing</a></li>
+                                        <li><a href="cosmetic-and-personal-care-testing.html">Cosmetics and Personal
+                                                Care Testing</a></li>
+                                        <li><a href="oil-gas-and-environmental-testing.html">Oil, Gas &amp;
+                                                Environmental Testing</a></li>
+                                        <li><a href="industrial-and-engineering-testing.html">Industrial & Engineering /
+                                                Material Testing</a></li>
+                                        <li><a href="electrical-electronics-safety-testing.html">Electrical, Electronics
+                                                & Safety Testing</a></li>
+                                        <li><a href="durability-and-weathering-test.html">Durability and Weathering
+                                                Tests</a></li>
+                                        <li><a href="certification-and-regulatory-tests.html">Certification & Regulatory
+                                                Tests</a></li>
+                                    </ul>
+                                </li>
                                 <li><a href="accreditations.html">ACCREDITATIONS</a></li>
                                 <li><a href="careers.html">CAREERS</a></li>
                                 <li><a href="blog/">BLOG</a></li>
                                 <li><a href="contact.html">CONTACT</a></li>
                             </ul>
 
-                            <div class="nav-right">
-                                <button class="lang-toggle" id="langToggle">AR</button>
+                          <div class="nav-right">
+                                <button class="lang-btn lang-toggle notranslate" id="langToggleDesktop" translate="no">AR</button>
+
                             </div>
 
                         </nav>
@@ -113,6 +139,31 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
+                <!-- <li class="dropdown">
+                    <a href="services.html" class="dropdown-toggle">
+                        Services
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="water-testing-and-risk-assesment.html">Water Testing and Risk
+                                Assesment</a></li>
+                        <li><a href="food-and-beverage-testing.html">Food and Beverage Testing</a></li>
+                        <li><a href="pharmaceutical-and-healthcare-testing.html">Pharmaceutical and
+                                Healthcare Testing</a></li>
+                        <li><a href="cosmetic-and-personal-care-testing.html">Cosmetics and Personal
+                                Care Testing</a></li>
+                        <li><a href="oil-gas-and-environmental-testing.html">Oil, Gas &amp;
+                                Environmental Testing</a></li>
+                        <li><a href="industrial-and-engineering-testing.html">Industrial & Engineering /
+                                Material Testing</a></li>
+                        <li><a href="electrical-electronics-safety-testing.html">Electrical, Electronics
+                                & Safety Testing</a></li>
+                        <li><a href="durability-and-weathering-test.html">Durability and Weathering
+                                Tests</a></li>
+                        <li><a href="certification-and-regulatory-tests.html">Certification & Regulatory
+                                Tests</a></li>
+                    </ul>
+                </li> -->
                 <li><a href="accreditations.html">Accreditations</a></li>
                 <li><a href="careers.html">Careers</a></li>
                 <li><a href="blog/">Blog</a></li>
@@ -1079,13 +1130,12 @@
 
 
 
-    <script>
+     <script>
         function setTranslateCookie(lang) {
             const from = lang === "ar" ? "en" : "ar";
             const value = `/${from}/${lang}`;
-
-            document.cookie = `googtrans=${value}; path=/; domain=${location.hostname};`;
             document.cookie = `googtrans=${value}; path=/;`;
+            document.cookie = `googtrans=${value}; path=/; domain=${location.hostname};`;
         }
 
         function switchLanguage(lang) {
@@ -1094,29 +1144,27 @@
         }
 
         window.addEventListener("load", () => {
-            const btn = document.getElementById("langToggle");
+            const buttons = [
+                document.getElementById("langToggleMobile"),
+                document.getElementById("langToggleDesktop")
+            ].filter(Boolean);
 
-            // Detect current language
             const match = document.cookie.match(/googtrans=\/(en|ar)\/(en|ar)/);
             const current = match ? match[2] : "en";
 
-            // --- REQUIRED BEHAVIOR ---
-            // If site is English → BUTTON shows AR
-            // If site is Arabic → BUTTON shows EN
-            // -------------------------
+            buttons.forEach(btn => {
+                if (current === "ar") {
+                    btn.textContent = "EN";
+                    btn.classList.add("ar");
+                } else {
+                    btn.textContent = "AR";
+                    btn.classList.remove("ar");
+                }
 
-            if (current === "ar") {
-                btn.textContent = "EN";  // show opposite
-                btn.classList.add("ar");
-            } else {
-                btn.textContent = "AR";  // show opposite
-                btn.classList.remove("ar");
-            }
-
-            // Toggle on click
-            btn.addEventListener("click", () => {
-                const newLang = current === "ar" ? "en" : "ar";
-                switchLanguage(newLang);
+                btn.addEventListener("click", () => {
+                    const newLang = current === "ar" ? "en" : "ar";
+                    switchLanguage(newLang);
+                });
             });
         });
     </script>
@@ -1186,7 +1234,7 @@
         setInterval(hideGoogleBanner, 500);
     </script>
 
-   <script>
+    <script>
         const burger = document.getElementById("hamburgerBtn");
         const menu = document.getElementById("mobileMenu");
         const header = document.getElementById("mobileHeader");

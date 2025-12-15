@@ -49,7 +49,7 @@ body {
     box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.41);
     padding: 30px 0;
     position: relative;
-    overflow: visible !important;
+    /* overflow: hidden !important; */
 }
 
 /* Navbar Container */
@@ -205,7 +205,85 @@ body {
 
 
 
+/* Dropdown container */
+.dropdown {
+    position: relative;
+}
 
+/* Dropdown menu hidden by default */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    transform: translateX(-15%);
+
+    width: 900px;
+    max-width: 95vw;
+    background: #fff;
+    padding: 25px 0px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+
+    /* display: grid; */
+    grid-template-columns: repeat(2, 1fr);
+
+    /* 🔥 KEY FIX */
+    grid-template-rows: repeat(5, auto);
+    grid-auto-flow: column;
+
+    column-gap: 20px;
+    row-gap: 18px;
+}
+
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+/* Dropdown links */
+.dropdown-menu li a {
+    position: relative;
+    display: block;
+    padding-left: 22px;
+    font-size: 14px;
+    color: #000;
+    text-decoration: none;
+    line-height: 1.4;
+}
+
+/* Arrow before each item */
+.dropdown-menu li a::before {
+    content: "➜";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #0b6b78;
+    font-size: 14px;
+}
+
+.dropdown-menu li a:hover {
+    background: #f2f2f2;
+    color: #000;
+}
+
+/* Show dropdown ONLY on hover */
+.dropdown:hover .dropdown-menu {
+    display: grid;   /*  grid activates here */
+}
+
+/* Mobile dropdown */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+    }
+
+    .dropdown-menu.show {
+        display: block;
+    }
+}
 
 
 
@@ -498,7 +576,7 @@ body {
 
     .lang-toggle {
         position: absolute;
-        top: 40px;
+        top: 24px;
         /* move downward */
         right: 0;
         /* keep it aligned on the right */
@@ -3464,7 +3542,7 @@ figcaption {
 .floating_btn_helpline {
     position: fixed;
     bottom: 100px;
-    right: 30px;
+    right: 38px;
     width: 100px;
     height: 100px;
     display: flex;
@@ -3519,7 +3597,7 @@ figcaption {
 
 @media (max-width:992px) {
     .floating_btn_helpline {
-        right: 30px;
+        right: 38px;
         bottom: 100px;
     }
 }
@@ -3696,87 +3774,3 @@ button:focus {
         display: block !important;
     }
 }
-
-/* ==============================
-   Atom Orbit Animation Fixed
-   ============================== */
-.atom-wrapper {
-    width: 150px;
-    height: 150px;
-    pointer-events: none;
-    transform-style: preserve-3d;
-    z-index: 10;
-}
-
-/* Left-top atom */
-.atom-left-top {
-    top: 20px;
-    left: 20px;
-    transform: scale(0.6);
-}
-
-/* Right-top atom */
-.atom-right-top {
-    top: 20px;
-    right: 20px;
-    transform: scale(0.6);
-}
-
-/* Center-bottom atom */
-.atom-center-bottom {
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%) scale(0.7);
-}
-
-/* Nucleus */
-.nucleus {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 14px;
-    height: 14px;
-    background: #fff;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-}
-
-/* Orbits */
-.orbit {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100px;
-    height: 100px;
-    border: 2px solid rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    transform-origin: center;
-}
-
-.orbit1 { transform: translate(-50%, -50%) rotateX(60deg) rotateY(0deg); }
-.orbit2 { transform: translate(-50%, -50%) rotateX(-60deg) rotateY(120deg); }
-.orbit3 { transform: translate(-50%, -50%) rotateX(0deg) rotateY(60deg); }
-
-/* Electrons */
-.electron {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 10px;
-    height: 10px;
-    background: #00ffff;
-    border-radius: 50%;
-    transform-origin: -50px center;
-    animation: orbit 4s linear infinite;
-}
-
-.electron1 { animation-delay: 0s; transform: rotateX(60deg) rotateY(0deg) translateX(50px) rotate(0deg); }
-.electron2 { animation-delay: 1.33s; transform: rotateX(-60deg) rotateY(120deg) translateX(50px) rotate(0deg); }
-.electron3 { animation-delay: 2.66s; transform: rotateX(0deg) rotateY(60deg) translateX(50px) rotate(0deg); }
-
-@keyframes orbit {
-    0%   { transform: rotate(0deg) translateX(50px) rotate(0deg); }
-    100% { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
-}
-

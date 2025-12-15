@@ -72,6 +72,11 @@ body {
 /* ================================
    GLASS DESKTOP NAVBAR
 ================================ */
+.main-header {
+  position: relative;
+  z-index: 1000;
+}
+
 .main-header .navbar {
   width: 80% !important;
   padding: 18px 35px;
@@ -84,6 +89,7 @@ body {
   align-items: center;
   margin-top: 0px !important;
   margin: 0 auto;
+    overflow: visible;
 }
 
 .nav-menu.desktop-menu {
@@ -95,7 +101,7 @@ body {
 }
 
 .nav-menu.desktop-menu li a {
-  color: white;
+  /* color: white; */
   font-size: 16px;
   font-weight: 500;
   text-decoration: none;
@@ -111,6 +117,60 @@ body {
   font-weight: 600;
   cursor: pointer;
 }
+.desktop-menu .dropdown {
+  position: relative;
+
+}
+
+/* Desktop dropdown (hover) */
+.desktop-menu .dropdown:hover .dropdown-menu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+  row-gap: 18px;
+}
+
+/* Desktop dropdown styling */
+.desktop-menu .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 900px;
+  max-width: 95vw;
+  background: #fff;
+  color: #000;
+  padding: 25px 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    z-index: 999999;
+  grid-template-rows: repeat(5, auto);
+  grid-auto-flow: column;
+}
+
+/* Mobile dropdown inside fullscreen menu */
+.mobile-fullscreen-menu .dropdown-menu {
+  display: none;
+  position: static !important;
+  width: 100% !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding-left: 15px;
+}
+
+.mobile-fullscreen-menu .dropdown-menu li a {
+  font-size: 18px;
+  color: #fff;
+}
+
+/* Mobile dropdown OPEN */
+.mobile-fullscreen-menu .dropdown-menu.open {
+display: flex;
+  flex-direction: column;
+}
+/* .mobile-fullscreen-menu .dropdown-toggle.active {
+  transform: rotate(180deg); 
+  transition: transform 0.3s;
+} */
 
 /* ================================
    MOBILE HEADER
@@ -3408,7 +3468,7 @@ select option {
 .floating_btn_helpline {
   position: fixed;
   bottom: 100px;
-  right: 30px;
+  right: 38px;
   width: 100px;
   height: 100px;
   display: flex;
@@ -3462,7 +3522,7 @@ select option {
 
 @media (max-width:992px) {
   .floating_btn_helpline {
-    right: 30px;
+    right: 38px;
     bottom: 100px;
   }
 }
