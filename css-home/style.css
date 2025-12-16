@@ -190,7 +190,8 @@ a {
 }
 
 .flexcaption h1 {
-    color: #ffffff;
+    /* color: #ffffff; */
+    color: #000000;
     font-size: 58px;
     font-weight: 700;
     font-family: 'Poppins', sans-serif;
