@@ -227,8 +227,36 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
                         <li class="dropdown">
-                            <a href="services.html" class="service-link">
-                                Services<span class="dropdown-toggle">▾</span></a>
+                            <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const hamburgerBtn = document.getElementById("hamburgerBtn");
+            const mobileMenu = document.getElementById("mobileMenu");
+
+            hamburgerBtn.addEventListener("click", () => {
+                mobileMenu.classList.toggle("menu-open");
+                hamburgerBtn.classList.toggle("active");
+
+                document.querySelectorAll(".dropdown").forEach(d => {
+                    d.classList.remove("open");
+                });
+            });
+
+            document.querySelectorAll(".dropdown > a").forEach(link => {
+                link.addEventListener("click", function (e) {
+
+                    if (window.innerWidth <= 991) {
+                        e.preventDefault();
+                        const dropdown = this.closest(".dropdown");
+                        dropdown.classList.toggle("open");
+                    }
+
+                });
+            });
+
+        });
+
+    </script>
 
 
                             <ul class="dropdown-menu">
