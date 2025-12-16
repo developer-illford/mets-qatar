@@ -2266,31 +2266,35 @@
         // Try repeatedly (Google injects late)
         setInterval(hideGoogleBanner, 500);
     </script>
-<script>
-        const burger = document.getElementById("hamburgerBtn");
-        const menu = document.getElementById("mobileMenu");
-        const header = document.getElementById("mobileHeader");
+ <script>
+        document.addEventListener("DOMContentLoaded", function () {
 
-        burger.addEventListener("click", () => {
+            const hamburgerBtn = document.getElementById("hamburgerBtn");
+            const mobileMenu = document.getElementById("mobileMenu");
 
-            // Get the mobile header height dynamically
-            const headerHeight = header.offsetHeight;
+            hamburgerBtn.addEventListener("click", () => {
+                mobileMenu.classList.toggle("menu-open");
+                hamburgerBtn.classList.toggle("active");
 
-            // Move the menu DOWN by the header height
-            menu.style.top = headerHeight + "px";
-            menu.style.height = `calc(60vh - ${headerHeight}px)`;
+                document.querySelectorAll(".dropdown").forEach(d => {
+                    d.classList.remove("open");
+                });
+            });
 
-            // Toggle animation
-            menu.classList.toggle("menu-open");
-            burger.classList.toggle("active");
+            document.querySelectorAll(".dropdown > a").forEach(link => {
+                link.addEventListener("click", function (e) {
 
-            // Optional: disable page scrolling when menu open
-            if (menu.classList.contains("menu-open")) {
-                document.body.style.overflow = "hidden";
-            } else {
-                document.body.style.overflow = "";
-            }
+                    if (window.innerWidth <= 991) {
+                        e.preventDefault();
+                        const dropdown = this.closest(".dropdown");
+                        dropdown.classList.toggle("open");
+                    }
+
+                });
+            });
+
         });
+
     </script>
 </body>
 
