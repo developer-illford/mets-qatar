@@ -29,7 +29,9 @@
     margin: auto;
 
 }
-
+ .main-header {
+     margin-bottom: 10px;
+    }
 .header-wrapper {
     display: flex;
     align-items: center;
